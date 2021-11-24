@@ -1,0 +1,19 @@
+body {
+    background: #fbfbfb;
+}
+
+main {
+    padding-top: 30px;
+}
+
+footer {
+    border-top: 2px solid black;
+}
+
+divExpior {
+    height:100px;
+    width:800px;   
+    text-align:center;    
+    display: inline-block;
+}
+

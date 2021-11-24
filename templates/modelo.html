@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.3.1/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-5.10.1/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+        <title>{% block title %}{% endblock %} - Projeto Leonardo</title>   
+        {% endblock %}
+    </head>
+<body>
+    {% block menu %}
+    <!-- menu GET -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- static-top -->
+        <a class="navbar-brand" href="{{ url_for('index') }}">Projeto Leonardo</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link active" href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a>     
+          
+            <div id="sessao" class="nav-link"></div>
+        </ul>
+    </nav>
+
+
+    {% endblock %}
+
+    <main>
+        <div class="container mt-5">
+            <div class="row mt-3">
+                <div class="col col-12">{% block content %}{% endblock %}</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='bootstrap-4.3.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fontawesome-5.10.1/js/all.js') }}"></script>
+
+    
+</body>
+</html>

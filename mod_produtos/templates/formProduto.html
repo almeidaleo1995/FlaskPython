@@ -1,0 +1,43 @@
+{% extends "modelo.html" %}
+
+{% block title %}Cliente{% endblock %}
+
+{% block content %}
+
+
+<h1 style="text-align: center;">Crud Prdutos</h1>
+<div class="container">
+    <div>
+        <a href="{{ url_for('produtos.addProduto') }}" style="text-align: center;">
+            <input type="button" value="Cadastrar Produto">
+        </a>
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Valor (R$)</th>   
+                    <th>Imagem</th>                 
+                  
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in produto %}
+                <tr>
+                    <td>{{e.nome}}</td>
+                    <td>{{e.valor}}</td>
+                    <input type="file" />
+                  
+                    <td>
+                        <a href="https://www.globo.com/">Editar</a> |
+                        <a href="https://www.globo.com/">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
