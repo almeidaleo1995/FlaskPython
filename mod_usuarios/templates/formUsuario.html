@@ -1,0 +1,40 @@
+{% extends "modelo.html" %}
+
+{% block title %}Cliente{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Crud Usuarios</h1>
+<div class="container">
+    <div>
+        <a href="{{ url_for('usuarios.addUsuario') }}" style="text-align: center;">
+            <input type="button" value="Cadastrar Usuarios" class="btn btn-success">
+        </a>
+        <div class="col-xs-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Login</th>
+                    <th>Senha</th>                    
+                    <th>Ações</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for e in usuario %}
+                <tr>
+                    <td>{{e.login}}</td>
+                    <td>{{e.senha}}</td>
+                    
+                    <td>
+                        <a href="{{ url_for('usuarios.editUsuario', id = e.id) }}">Editar</a> |
+                        <a href="{{ url_for('usuarios.delete', id = e.id) }}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
