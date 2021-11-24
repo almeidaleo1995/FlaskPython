@@ -29,8 +29,8 @@
                     <input type="file" />
                   
                     <td>
-                        <a href="https://www.globo.com/">Editar</a> |
-                        <a href="https://www.globo.com/">Excluir</a>
+                        <a href="{{ url_for('produtos.edit', id = e.id) }}">Editar</a> |
+                        <a href="{{ url_for('produtos.delete', id = e.id) }}">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}
