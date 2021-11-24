@@ -22,11 +22,13 @@ class Cliente(db.Model):
 class Produto(db.Model): 
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(150))    
-    valor = db.Column(db.String(150))  
+    valor = db.Column(db.String(150)) 
+    image = db.Column(db.Text)
 
-    def __init__(self, nome,valor):
+    def __init__(self, nome,valor, image):
         self.nome = nome    
-        self.valor = valor  
+        self.valor = valor 
+        self.image = image
 
     def __repr__(self):
         return '<Produto %r>' % self.id
