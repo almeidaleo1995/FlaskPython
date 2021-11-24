@@ -12,7 +12,7 @@ app.secret_key = os.urandom(12).hex()
 def before_request():
     session.permanent = True
     #o padrão é 31 dias...
-    app.permanent_session_lifetime = timedelta(minutes=1)
+    app.permanent_session_lifetime = timedelta(minutes=30)
 
 
 @app.route('/')
