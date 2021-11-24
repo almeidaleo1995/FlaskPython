@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{e.nome}}</td>
                     <td>{{e.valor}}</td> 
-                    <td><img src="data:image/jpg;base64, {{e.image_str}}" /> </td>         
+                    <td><img src="data:image/jpg;base64, {{e.image_str}} " height="100" width="100" /> </td>         
                   
                     <td>
                         <a href="{{ url_for('produtos.edit', id = e.id) }}">Editar</a> |
