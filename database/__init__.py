@@ -1,1 +1,1 @@
-from database.model import Cliente, Produto
+from database.model import Cliente, Produto, Usuario

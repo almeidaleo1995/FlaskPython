@@ -9,7 +9,7 @@
 <div class="container">
     <div>
         <a href="{{ url_for('produtos.addProduto') }}" style="text-align: center;">
-            <input type="button" value="Cadastrar Produto">
+            <input type="button" value="Cadastrar Produto" class="btn btn-success">
         </a>
         <div class="col-xs-12">
             <table class="table">
@@ -25,12 +25,12 @@
                 {% for e in produto %}
                 <tr>
                     <td>{{e.nome}}</td>
-                    <td>{{e.valor}}</td>
-                    <input type="file" />
+                    <td>{{e.valor}}</td> 
+                    <td><img src="data:image/jpg;base64, {{e.image_str}} " height="100" width="100" /> </td>         
                   
                     <td>
-                        <a href="https://www.globo.com/">Editar</a> |
-                        <a href="https://www.globo.com/">Excluir</a>
+                        <a href="{{ url_for('produtos.edit', id = e.id) }}">Editar</a> |
+                        <a href="{{ url_for('produtos.delete', id = e.id) }}">Excluir</a>
                     </td>
                 </tr>
                 {% endfor %}

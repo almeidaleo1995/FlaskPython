@@ -19,10 +19,12 @@ def create_app():
     from mod_home.home import bp_home
     from mod_clientes.clientes import bp_clientes
     from mod_produtos.produtos import bp_produtos
+    from mod_usuarios.usuarios import bp_usuarios
 
     app.register_blueprint(bp_login)
     app.register_blueprint(bp_home)
     app.register_blueprint(bp_clientes)
     app.register_blueprint(bp_produtos)
+    app.register_blueprint(bp_usuarios)
 
     return app
